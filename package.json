@@ -1,10 +1,10 @@
 {
   "name": "suman-daemon",
-  "version": "0.0.1001",
+  "version": "0.0.1002",
   "description": "Suman daemon worker process pool and more",
   "main": "index.js",
-  "typings":"index.d.ts",
-  "types":"index.d.ts",
+  "typings": "index.d.ts",
+  "types": "index.d.ts",
   "scripts": {
     "test": "suman test"
   },
