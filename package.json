@@ -1,0 +1,28 @@
+{
+  "name": "suman-daemon",
+  "version": "0.0.1001",
+  "description": "Suman daemon worker process pool and more",
+  "main": "index.js",
+  "scripts": {
+    "test": "suman test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumanjs/suman-daemon.git"
+  },
+  "keywords": [
+    "suman",
+    "sumanjs",
+    "testing",
+    "e2e",
+    "daemon",
+    "worker",
+    "suman-f"
+  ],
+  "author": "Olegzandr VD",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumanjs/suman-daemon/issues"
+  },
+  "homepage": "https://github.com/sumanjs/suman-daemon#readme"
+}

@@ -1,0 +1,9 @@
+.idea
+test
+suman.conf.js
+*.sh
+*.md
+*.txt
+*.log
+*.ts
+!*.d.ts
