@@ -1,9 +1,5 @@
 'use strict';
 
-//polyfills
-const process = require('suman-browser-polyfills/modules/process');
-const global = require('suman-browser-polyfills/modules/global');
-
 //core
 import fs = require('fs');
 import path = require('path');
@@ -19,12 +15,11 @@ console.log('starting this thing.');
 
 ///////////////////////////////////////////////
 
-const projectRoot = residence.findProjectRoot(process.cwd());
-const sumanLibRoot = path.resolve(__dirname + '/../../../');
+// const projectRoot = residence.findProjectRoot(process.cwd());
+// const sumanLibRoot = path.resolve(__dirname + '/../../../');
 
-console.log('project root => ', projectRoot);
-console.log('suman lib root => ', sumanLibRoot);
-
+console.log('project root => ', process.env.SUMAN_PROJECT_ROOT);
+console.log('suman lib root => ', process.env.SUMAN_LIBRARY_ROOT_PATH);
 
 if (!process.stdout.isTTY) {
   console.error('process is not a tty, cannot run suman-daemon.');
@@ -36,19 +31,20 @@ try {
   fs.writeFileSync(f, String(process.pid));
 }
 catch (err) {
-  console.error('\n',err.stack,'\n');
+  console.error('\n', err.stack, '\n');
   process.exit(1);
 }
 
-console.log('suman daemon loaded.');
+console.log('suman daemon loaded...');
 
 const p = new Pool({
   filePath: path.resolve(__dirname + '/lib/suman-fast-script.js'),
   size: 3,
-  env: Object.assign({}, process.env, {
-    SUMAN_LIBRARY_ROOT_PATH: sumanLibRoot,
-    SUMAN_PROJECT_ROOT: projectRoot
-  }),
+  env: Object.assign({}, process.env),
+  // env: Object.assign({}, process.env, {
+  //   SUMAN_LIBRARY_ROOT_PATH: sumanLibRoot,
+  //   SUMAN_PROJECT_ROOT: projectRoot
+  // }),
   streamStdioAfterDelegation: true,
   oneTimeOnly: true,
   inheritStdio: false,
