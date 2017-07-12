@@ -7,7 +7,7 @@ const global = require('suman-browser-polyfills/modules/global');
 //core
 import fs = require('fs');
 import path = require('path');
-import * as net from 'net';
+import net = require('net');
 import util = require('util');
 
 //npm
