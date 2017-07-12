@@ -4,6 +4,7 @@ var fs = require("fs");
 var path = require("path");
 var net = require("net");
 var util = require("util");
+var assert = require("assert");
 var poolio_1 = require("poolio");
 var JSONStream = require("JSONStream");
 console.log('starting this thing.');
@@ -35,8 +36,21 @@ p.on('error', function (e) {
 });
 var s = net.createServer(function (socket) {
     console.log('socket connection made.');
-    socket.pipe(JSONStream.parse()).on('data', function (obj) {
+    socket.pipe(JSONStream.parse())
+        .on('error', function (e) {
+        console.error(e.stack || e);
+        socket.end(e.stack || e);
+    })
+        .on('data', function (obj) {
         console.log('message from ', util.inspect(obj));
+        try {
+            assert(typeof obj.pid === 'number', 'object has no process id.');
+            assert(Array.isArray(obj.args), 'object has no arguments array.');
+        }
+        catch (err) {
+            console.error(err.message);
+            return;
+        }
         return p.any(obj, { socket: socket });
     });
 });

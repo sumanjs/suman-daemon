@@ -5,6 +5,7 @@ import fs = require('fs');
 import path = require('path');
 import net = require('net');
 import util = require('util');
+import assert = require('assert');
 
 //npm
 import residence = require('residence');
@@ -59,9 +60,23 @@ const s = net.createServer(function (socket) {
 
   console.log('socket connection made.');
 
-  socket.pipe(JSONStream.parse()).on('data', function (obj: Object) {
+  socket.pipe(JSONStream.parse())
+  .on('error', function (e: Error) {
+    console.error(e.stack || e);
+    socket.end(e.stack || e);
+  })
+  .on('data', function (obj: Object) {
 
     console.log('message from ', util.inspect(obj));
+
+    try {
+      assert(typeof obj.pid === 'number', 'object has no process id.');
+      assert(Array.isArray(obj.args), 'object has no arguments array.');
+    }
+    catch (err) {
+      console.error(err.message);
+      return;
+    }
 
     // socket.write('pinnochio');
     return p.any(obj, {socket});
