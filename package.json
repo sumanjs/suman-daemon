@@ -3,6 +3,8 @@
   "version": "0.0.1001",
   "description": "Suman daemon worker process pool and more",
   "main": "index.js",
+  "typings":"index.d.ts",
+  "types":"index.d.ts",
   "scripts": {
     "test": "suman test"
   },
@@ -24,5 +26,13 @@
   "bugs": {
     "url": "https://github.com/sumanjs/suman-daemon/issues"
   },
-  "homepage": "https://github.com/sumanjs/suman-daemon#readme"
+  "homepage": "https://github.com/sumanjs/suman-daemon#readme",
+  "devDependencies": {
+    "@types/node": "^6.0.81"
+  },
+  "dependencies": {
+    "JSONStream": "^1.3.1",
+    "poolio": "^0.2.54010",
+    "residence": "0.0.205"
+  }
 }
