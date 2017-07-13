@@ -48,7 +48,7 @@ const p = new Pool({
   // }),
   streamStdioAfterDelegation: true,
   oneTimeOnly: true,
-  inheritStdio: false,
+  inheritStdio: true,
   resolveWhenWorkerExits: true
 });
 

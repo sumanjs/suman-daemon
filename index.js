@@ -28,7 +28,7 @@ var p = new poolio_1.Pool({
     env: Object.assign({}, process.env),
     streamStdioAfterDelegation: true,
     oneTimeOnly: true,
-    inheritStdio: false,
+    inheritStdio: true,
     resolveWhenWorkerExits: true
 });
 p.on('error', function (e) {
