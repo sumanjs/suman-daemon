@@ -10,6 +10,7 @@
   "list": [
     "residence",
     "poolio",
-    "suman-utils"
+    "suman-utils",
+    "suman-types"
   ]
 }

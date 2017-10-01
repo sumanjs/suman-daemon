@@ -2,8 +2,11 @@
   "compilerOptions": {
     "declaration": true,
     "baseUrl": ".",
-    "types": [
-      "node"
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules/suman-types/dts",
+      "node_modules/suman-types/dts/*",
+      "node_modules/suman-types"
     ],
     "allowJs": false,
     "target": "es5",
