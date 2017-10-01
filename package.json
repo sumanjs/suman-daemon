@@ -33,8 +33,8 @@
   "dependencies": {
     "JSONStream": "^1.3.1",
     "forever": "^0.15.3",
-    "poolio": "^0.2.54010",
+    "poolio": "latest",
     "residence": "0.0.205",
-    "suman-utils": "0.0.73115"
+    "suman-utils": "latest"
   }
 }
