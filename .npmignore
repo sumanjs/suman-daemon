@@ -8,6 +8,10 @@ node_modules
 suman.conf.js
 .gitignore
 .npmignore
+package-lock.json
+yarn.lock
+.babelrc
+.travis.yml
 
 ### matching files
 *.sh

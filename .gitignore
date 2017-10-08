@@ -1,3 +1,12 @@
+
+### folders
 .idea
 node_modules
+coverage
+
+### matching
 *.log
+
+### files
+package-lock.json
+yarn.lock
