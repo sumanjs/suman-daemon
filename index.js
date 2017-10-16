@@ -25,7 +25,9 @@ console.log('suman daemon loaded...');
 var p = new poolio_1.Pool({
     filePath: path.resolve(__dirname + '/lib/suman-fast-script.js'),
     size: 3,
-    env: Object.assign({}, process.env),
+    env: Object.assign({}, process.env, {
+        FORCE_COLOR: 1
+    }),
     streamStdioAfterDelegation: true,
     oneTimeOnly: true,
     inheritStdio: true,
