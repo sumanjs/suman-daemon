@@ -19,10 +19,13 @@
     "e2e",
     "daemon",
     "worker",
-    "suman-f"
+    "performance-testing",
+    "developer-experience",
+    "dev-ex",
+    "dx"
   ],
   "author": "Olegzandr VD",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/sumanjs/suman-daemon/issues"
   },
