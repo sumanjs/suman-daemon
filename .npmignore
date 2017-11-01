@@ -3,6 +3,7 @@
 .idea
 test
 node_modules
+scripts
 
 ### files
 suman.conf.js
@@ -20,6 +21,7 @@ yarn.lock
 *.log
 *.ts
 *.json
+*.DS_Store
 
 ### negation
 !*.d.ts

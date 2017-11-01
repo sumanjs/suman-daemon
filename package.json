@@ -27,14 +27,15 @@
     "url": "https://github.com/sumanjs/suman-daemon/issues"
   },
   "homepage": "https://github.com/sumanjs/suman-daemon#readme",
-  "devDependencies": {
-    "@types/node": "^6.0.81"
-  },
+
   "dependencies": {
     "JSONStream": "^1.3.1",
     "forever": "^0.15.3",
     "poolio": "latest",
     "residence": "0.0.205",
     "suman-utils": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.81"
   }
 }
