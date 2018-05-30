@@ -39,10 +39,10 @@ catch (err) {
 console.log('suman daemon loaded...');
 
 const p = new Pool({
-  filePath: path.resolve(__dirname + '/lib/suman-fast-script.js'),
+  filePath: path.resolve(__dirname + '/suman-fast-script.js'),
   size: 3,
   env: Object.assign({}, process.env, {
-    FORCE_COLOR:1
+    FORCE_COLOR: 1
   }),
   // env: Object.assign({}, process.env, {
   //   SUMAN_LIBRARY_ROOT_PATH: sumanLibRoot,

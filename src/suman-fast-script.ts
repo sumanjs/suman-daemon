@@ -17,7 +17,7 @@ process.once('message', function (data) {
   const _suman = global.__suman = (global.__suman || {});
 
   // _suman.absoluteLastHook = function () {};
-
+in
   process.once('exit', function () {
 
     if (data.msg.pid === -1) {
