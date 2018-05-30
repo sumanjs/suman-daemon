@@ -1,10 +1,10 @@
 {
   "name": "suman-daemon",
-  "version": "0.0.1004",
+  "version": "0.0.1005",
   "description": "Suman daemon worker process pool and more",
-  "main": "index.js",
-  "typings": "index.d.ts",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "suman test"
   },
@@ -34,7 +34,7 @@
     "JSONStream": "^1.3.1",
     "forever": "^0.15.3",
     "poolio": "latest",
-    "residence": "0.0.205",
+    "residence": "latest",
     "suman-utils": "latest"
   },
   "devDependencies": {
