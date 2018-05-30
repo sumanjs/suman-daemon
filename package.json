@@ -1,6 +1,6 @@
 {
   "name": "suman-daemon",
-  "version": "0.0.1005",
+  "version": "0.0.1006",
   "description": "Suman daemon worker process pool and more",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
