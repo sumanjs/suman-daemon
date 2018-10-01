@@ -16,3 +16,4 @@ yarn.lock
 
 ### inverse
 !dist/readme.md
+!dist/README.md
