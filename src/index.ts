@@ -10,7 +10,7 @@ import assert = require('assert');
 //npm
 import residence = require('residence');
 import {Pool} from 'poolio';
-import JSONStream = require('JSONStream');
+import {JSONParser} from '@oresoftware/json-stream-parser';
 
 console.log('starting this thing.');
 
@@ -62,8 +62,8 @@ const s = net.createServer(function (socket) {
 
   console.log('socket connection made.');
 
-  socket.pipe(JSONStream.parse())
-  .on('error', function (e: Error) {
+  socket.pipe(new JSONParser())
+  .once('error', function (e: Error) {
     console.error(e.stack || e);
     socket.end(e.stack || e);
   })
