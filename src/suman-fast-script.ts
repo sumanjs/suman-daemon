@@ -17,7 +17,7 @@ process.once('message', function (data) {
   const _suman = global.__suman = (global.__suman || {});
 
   // _suman.absoluteLastHook = function () {};
-in
+
   process.once('exit', function () {
 
     if (data.msg.pid === -1) {
@@ -56,9 +56,9 @@ in
 });
 
 const sumanFilesToLoad = [
-  'lib/exec-suite.js',
-  'lib/suman.js',
-  'lib/index.js'
+  'dist/exec-suite.js',
+  'dist/suman.js',
+  'dist/index.js'
 ];
 
 process.once('SIGINT', function () {

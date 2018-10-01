@@ -58,14 +58,14 @@ p.on('error', function (e: Error) {
   console.error('pool error => ', e.stack || e);
 });
 
-const s = net.createServer(function (socket) {
+const server = net.createServer(s => {
 
   console.log('socket connection made.');
 
-  socket.pipe(new JSONParser())
+  s.pipe(new JSONParser())
   .once('error', function (e: Error) {
     console.error(e.stack || e);
-    socket.end(e.stack || e);
+    s.end(e.stack || e);
   })
   .on('data', function (obj: Object) {
 
@@ -81,18 +81,18 @@ const s = net.createServer(function (socket) {
     }
 
     // socket.write('pinnochio');
-    return p.any(obj, {socket});
+    return p.any(obj, {socket: s});
   });
 
 });
 
 const port = 9091;
 
-s.once('listening', function () {
+server.once('listening', function () {
   console.log(`suman daemon tcp server listening on port ${port}`);
 });
 
-s.listen(port);
+server.listen(port);
 
 
 
